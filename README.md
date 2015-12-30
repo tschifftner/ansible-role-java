@@ -6,7 +6,7 @@ Installs java on Debian/Ubuntu linux servers.
 
 ## Requirements
 
-ansible 2.0+
+ansible 1.8+
 
 ## Role Variables
 
