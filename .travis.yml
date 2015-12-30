@@ -20,9 +20,6 @@ install:
   # Install ansible-lint
   - pip install ansible-lint
 
-  # Install requirements
-  - ansible-galaxy install tschifftner.java
-
 script:
   # Check the role/playbook's syntax.
   - "ansible-playbook -i tests/inventory tests/$SITE --syntax-check"
