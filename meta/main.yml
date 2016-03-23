@@ -10,11 +10,12 @@ galaxy_info:
   platforms:
   - name: Debian
     versions:
-    - all
+    - jessie
   - name: Ubuntu
     versions:
-    - all
+    - trusty
   galaxy_tags:
+    - ubuntu
     - debian
     - java
     - jdk
