@@ -22,12 +22,6 @@ env:
   - SITE=test.yml ANSIBLE_VERSION=1.8.1
   - SITE=test.yml ANSIBLE_VERSION=1.8
 
-matrix:
-  allow_failures:
-    - env: SITE=test.yml ANSIBLE_VERSION=2.0.0.2
-    - env: SITE=test.yml ANSIBLE_VERSION=2.0.0.1
-    - env: SITE=test.yml ANSIBLE_VERSION=2.0.0.0
-
 branches:
   only:
     - master
@@ -65,16 +59,16 @@ script:
 
   # Make sure Java is installed.
   - >
-    java -version | grep 'java version'
+    java -version
     && (echo 'Java is installed' && exit 0)
     || (echo 'Java is not installed' && exit 1)
 
 after_failure:
   # run playbook again to see idempotence failures
   - ansible-playbook -i tests/inventory tests/$SITE --connection=local --sudo
-
   - which java
   - java -version
+  - ansible --version
 
 notifications:
   slack: ambimax:2MlPTX9bY9aPxCPhJGxHKIT6
