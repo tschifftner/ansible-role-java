@@ -6,7 +6,7 @@ Installs java on Debian/Ubuntu linux servers.
 
 ## Requirements
 
-ansible 1.8+
+None
 
 ## Role Variables
 
@@ -35,9 +35,7 @@ $ ansible-galaxy install tschifftner.java
 
 Ansible          | Debian Jessie    | Ubuntu 14.04    | Ubuntu 12.04
 :--------------: | :--------------: | :-------------: | :-------------: 
-1.8              | Yes              | Yes             | Yes
-1.9              | Yes              | Yes             | Yes
-2.0              | Yes              | Yes             | Yes
+2.1              | Yes              | Yes             | Yes
 
 ## License
 
@@ -45,4 +43,4 @@ MIT / BSD
 
 ## Author Information
 
- - Tobias Schifftner, @tschifftner
+ - [Tobias Schifftner](https://twitter.com/tschifftner), [ambimax® GmbH](https://www.ambimax.de)
