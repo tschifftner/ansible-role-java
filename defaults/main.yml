@@ -1,6 +1,20 @@
 ---
+java_pre_packages:
+  - software-properties-common
+
 #   - java
 #   - openjdk-6-jdk
 #   - openjdk-7-jdk
+#   - openjdk-7-jdk
 java_packages:
-  - openjdk-7-jdk
+  - oracle-java8-installer
+  - ca-certificates
+  - oracle-java8-set-default
+
+java_repositories:
+  - "deb http://ppa.launchpad.net/webupd8team/java/ubuntu xenial main"
+  - "deb-src http://ppa.launchpad.net/webupd8team/java/ubuntu xenial main"
+
+java_apt_keyserver: 'keyserver.ubuntu.com'
+java_apt_keyid: 'EEA14886'
+#apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys EEA14886
