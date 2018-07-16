@@ -27,9 +27,6 @@ script:
   # Run tests.
   - ${PWD}/tests/test.sh
 
-  # Make sure java service is running
-  - ${DOCKER} service java status | grep "running"
-
   # Check java is installed
   - ${DOCKER} java -version
 
