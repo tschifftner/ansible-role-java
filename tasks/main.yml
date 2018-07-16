@@ -1,16 +1,31 @@
 ---
 
+- name: Include java 8 variables
+  include_vars: java8.yml
+  when: java_version == 8
+
+- name: Include java 9 variables
+  include_vars: java9.yml
+  when: java_version == 9
+
+- name: Include java 10 variables
+  include_vars: java10.yml
+  when: java_version == 10
+
+
 - name: Ensure Java pre packages are installed
   apt:
     pkg: '{{ item }}'
     state: present
   with_items: '{{ java_pre_packages }}'
+  when: java_pre_packages is defined and java_pre_packages|length
 
 - name: Install apt keys
   apt_key:
     keyserver: "{{ java_apt_keyserver }}"
     id: "{{ java_apt_keyid }}"
     state: present
+  when: java_apt_keyserver is defined and java_apt_keyserver != ''
 
 - name: Install repositories
   apt_repository:
@@ -25,12 +40,17 @@
     update_cache: yes
     cache_valid_time: 86400
 
-- name: Accept Java 8 License
+- name: Accept Java Licenses
   debconf:
-    name: "oracle-java8-installer"
+    name: "{{ item }}"
     question: "shared/accepted-oracle-license-v1-1"
     value: "true"
     vtype: "select"
+  changed_when: false
+  with_items:
+    - 'oracle-java11-installer'
+    - 'oracle-java10-installer'
+    - 'oracle-java8-installer'
 
 - name: Ensure Java is installed
   apt:

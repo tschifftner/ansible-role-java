@@ -2,5 +2,8 @@
 - hosts: localhost
   remote_user: root
 
+  vars:
+    java_version: 8
+
   roles:
     - role_under_test
