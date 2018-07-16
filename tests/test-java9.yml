@@ -1,0 +1,9 @@
+---
+- hosts: localhost
+  remote_user: root
+
+  vars:
+    java_version: 9
+
+  roles:
+    - role_under_test

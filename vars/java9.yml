@@ -1,0 +1,16 @@
+---
+
+java_pre_packages:
+  - software-properties-common
+
+java_packages:
+  - oracle-java9-installer
+  - ca-certificates
+  - oracle-java9-set-default
+
+java_repositories:
+  - "deb http://ppa.launchpad.net/linuxuprising/java/ubuntu xenial main"
+  - "deb-src http://ppa.launchpad.net/linuxuprising/java/ubuntu xenial main"
+
+java_apt_keyserver: 'keyserver.ubuntu.com'
+java_apt_keyid: 'EA8CACC073C3DB2A'
