@@ -13,7 +13,6 @@
   when: java_version == 10
 
 
-
 - name: Ensure Java pre packages are installed
   apt:
     pkg: '{{ item }}'
@@ -51,7 +50,6 @@
   with_items:
     - 'oracle-java11-installer'
     - 'oracle-java10-installer'
-    - 'oracle-java9-installer'
     - 'oracle-java8-installer'
 
 - name: Ensure Java is installed

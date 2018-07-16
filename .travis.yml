@@ -46,7 +46,7 @@ script:
 after_failure:
   - ${DOCKER} which java
   - ${DOCKER} service java status
-  - ${DOCKER} java --version
+  - ${DOCKER} java -version
 
 notifications:
   slack: ambimax:2MlPTX9bY9aPxCPhJGxHKIT6
