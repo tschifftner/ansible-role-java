@@ -44,17 +44,15 @@
 - name: Accept Java Licenses
   debconf:
     name: "{{ item }}"
-    question: "shared/accepted-oracle-license-v1-1"
+    question: "shared/accepted-oracle-license-v1-2"
     value: "true"
     vtype: "select"
   changed_when: false
   with_items:
     - 'oracle-java11-installer'
-    - 'oracle-java10-installer'
     - 'oracle-java8-installer'
 
 - name: Ensure Java is installed
   apt:
-    pkg: '{{ item }}'
+    pkg: '{{ java_packages }}'
     state: present
-  with_items: '{{ java_packages }}'

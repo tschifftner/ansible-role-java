@@ -13,7 +13,7 @@ None
 Available variables are listed below, along with default values (see `defaults/main.yml`):
 
 ```
-java_version: 10
+java_version: 11
 ```
 
 ## Dependencies
@@ -34,7 +34,9 @@ $ ansible-galaxy install tschifftner.java
 
 ## Supported Java versions
 
-**Java 10:** All supported OS
+**Java 11:** All supported OS
+
+~~**Java 10:**~~ All supported OS
 
 ~~**Java 9:**~~ Not supported due to download problems
 

@@ -4,9 +4,9 @@ java_pre_packages:
   - software-properties-common
 
 java_packages:
-  - oracle-java10-installer
+  - oracle-java11-installer
   - ca-certificates
-  - oracle-java10-set-default
+  - oracle-java11-set-default
 
 java_repositories:
   - "deb http://ppa.launchpad.net/linuxuprising/java/ubuntu xenial main"
