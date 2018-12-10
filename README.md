@@ -36,11 +36,7 @@ $ ansible-galaxy install tschifftner.java
 
 **Java 11:** All supported OS
 
-~~**Java 10:**~~ All supported OS
-
-~~**Java 9:**~~ Not supported due to download problems
-
-**Java 8:** All supported OS except for Ubuntu 18.04 (Bionic Beaver). Will be removed for Java 11.
+There is no support for lower versions than java 11.
 
 
 ## Supported OS
