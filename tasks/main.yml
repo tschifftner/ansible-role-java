@@ -1,23 +1,9 @@
 ---
 
-- name: Include java 8 variables
-  include_vars: java8.yml
-  when: java_version == 8
-
-- name: Include java 9 variables
-  include_vars: java9.yml
-  when: java_version == 9
-
-- name: Include java 10 variables
-  include_vars: java10.yml
-  when: java_version == 10
-
-
 - name: Ensure Java pre packages are installed
   apt:
-    pkg: '{{ item }}'
+    pkg: '{{ java_pre_packages }}'
     state: present
-  with_items: '{{ java_pre_packages }}'
   when: java_pre_packages is defined and java_pre_packages|length
 
 - name: Install apt keys
@@ -44,17 +30,14 @@
 - name: Accept Java Licenses
   debconf:
     name: "{{ item }}"
-    question: "shared/accepted-oracle-license-v1-1"
+    question: "shared/accepted-oracle-license-v1-2"
     value: "true"
     vtype: "select"
   changed_when: false
   with_items:
     - 'oracle-java11-installer'
-    - 'oracle-java10-installer'
-    - 'oracle-java8-installer'
 
 - name: Ensure Java is installed
   apt:
-    pkg: '{{ item }}'
+    pkg: '{{ java_packages }}'
     state: present
-  with_items: '{{ java_packages }}'

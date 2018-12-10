@@ -10,22 +10,9 @@ env:
 #  - distro: ubuntu1204
 
   - distro: debian9
-    playbook: test-java8.yml
-  - distro: debian9
-    playbook: test-java10.yml
-
   - distro: debian8
-    playbook: test-java8.yml
-  - distro: debian8
-    playbook: test-java10.yml
-
   - distro: ubuntu1804
-    playbook: test-java10.yml
-
   - distro: ubuntu1604
-    playbook: test-java8.yml
-  - distro: ubuntu1604
-    playbook: test-java10.yml
 
 script:
   # Configure test script so we can run extra tests after playbook is run.
